@@ -5,5 +5,45 @@
     "description": "",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
-  "item": []
+  "item": [
+    {
+      "_postman_id": "af5a7f55-04cf-6385-f392-a2754948c924",
+      "name": "GET books",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "4ce8a833-97f1-4751-8e0c-9954ee7b58ac",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Status code name has string\", function () {",
+              "    pm.response.to.have.status(\"OK\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "G-TOKEN",
+            "value": "ROM831ESV"
+          }
+        ],
+        "body": {},
+        "url": "http://ec2-52-54-255-212.compute-1.amazonaws.com:3000/books",
+        "description": null
+      },
+      "response": []
+    }
+  ]
 }
